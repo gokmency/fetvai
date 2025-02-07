@@ -1,0 +1,158 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --primary: #1E6F5C;
+  --primary-light: #29BB89;
+  --primary-dark: #134B40;
+  --accent: #E6B325;
+  --accent-light: #F7D44C;
+  --text-primary: #1A2C32;
+  --text-secondary: #435B66;
+  --background: #F8FAFC;
+}
+
+/* Base Styles */
+body {
+  background: linear-gradient(135deg, var(--background), #E8F3F1);
+  color: var(--text-primary);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(30, 111, 92, 0.1);
+  box-shadow: 0 8px 32px rgba(30, 111, 92, 0.1);
+}
+
+/* Primary Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(to right, var(--primary), var(--primary-light));
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(30, 111, 92, 0.2);
+  transition: all 0.3s ease;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #047857, #059669);
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  color: #059669;
+  border: 1px solid #059669;
+  border-radius: 0.75rem;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #f0fdf4;
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.6s ease-out;
+    animation-fill-mode: both;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px -5px rgba(72, 187, 120, 0.5);
+  }
+  to {
+    box-shadow: 0 0 20px -5px rgba(72, 187, 120, 0.5);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Import Arabic font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+
+.font-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+}
