@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   
   return {
-    base: process.env.NODE_ENV === 'production' ? 'https://fetvai.vercel.app/' : '/',
+    base: '/',
     plugins: [react()],
     optimizeDeps: {
       exclude: ['lucide-react'],

@@ -1,4 +1,4 @@
-import { type ReactElement } from 'react';
+import { type FC } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LandingPage } from './pages/LandingPage';
 import { Layout } from './components/Layout';
@@ -7,7 +7,7 @@ import { FetvaResponse } from './components/FetvaResponse';
 import { ErrorMessage } from './components/ErrorMessage';
 import { useFetva } from './hooks/useFetva';
 
-function FetvaApp() {
+const FetvaApp: FC = () => {
   const { isLoading, response, error, askQuestion } = useFetva();
 
   return (
@@ -19,7 +19,7 @@ function FetvaApp() {
   );
 }
 
-export default function App() {
+const App: FC = () => {
   return (
     <BrowserRouter>
       <Routes>
